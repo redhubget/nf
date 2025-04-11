@@ -25,7 +25,7 @@ export default function App() {
     formData.append("brief_email", briefEmail);
 
     try {
-      const res = await axios.post("http://localhost:8000/upload", formData);
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/upload`, formData);
       setMessage(res.data.message);
       setDownloads({
         tech: res.data.tech_download_url,
